@@ -1,0 +1,57 @@
+--------------------GRUPOS -----------------------------
+INSERT INTO `grupos` (`id_grupo`, `cod_grupo`) VALUES
+('1A', '1A'),
+('1B', '1B'),
+('1C', '1C'),
+('1D', '1D'),
+('1E', '1E'),
+('1F', '1F'),
+('1G', '1G'),
+('1H', '1H'),
+('1I', '1I'),
+('1J', '1J'),
+('1K', '1K'),
+('1L', '1L'),
+('2A', '2A'),
+('2B', '2B'),
+('2C', '2C'),
+('2D', '2D'),
+('2E', '2E'),
+('2F', '2F'),
+('2G', '2G'),
+('2H', '2H'),
+('2I', '2I'),
+('2J', '2J'),
+('2K', '2K'),
+('2L', '2L'),
+('3A', '3A'),
+('3B', '3B'),
+('3C', '3C'),
+('3D', '3D'),
+('3E', '3E'),
+('3F', '3F'),
+('3G', '3G'),
+('3H', '3H'),
+('3I', '3I'),
+('3J', '3J'),
+('3K', '3K'),
+('3L', '3L');
+
+------------------------EXPECIALIDADES---------------------
+INSERT INTO `expecialidades` (`id_expecialidad`, `nombre_expecialidad`, `detalles_expecialidad`) VALUES
+(1, 'Bachillerato Técnico Vocacional Administrativo Contable', 'El bachillerato Técnico Vocacional Administrativo Contable, brinda las competencias para lograr potenciar las diferentes habilidades pre-profesionales aplicadas para diseñar, organizar y controlar información financiera y económica, relacionada con las operaciones empresariales, procesos de control interno, contabilidad, mercadotecnia y administración de los distintos sectores que conforman la economía; efectuando técnicas, herramientas, conocimientos e interpretación correcta de normas, procedimientos, políticas y leyes mercantiles, civiles, financieras, aduanales y tributarias. Potenciando competencias técnicas, humano-sociales, académicas y emprendedoras en el alumnado para continuar estudios superiores y que le permitan incorporarse al mundo productivo como empleado o empleador.'),
+(2, 'Bachillerato Técnico Vocacional en Desarrollo de Software', 'El Bachillerato Técnico Vocacional en Desarrollo de Software te brinda los conocimientos y habilidades para el control y mantenimiento de sistemas de información y telecomunicación.'),
+(3, 'Bachillerato Técnico Vocacional Atención Primaria de Salud', 'Formar bachilleres competentes en el desarrollo de promoción de la salud.\nAplicar conocimientos sobre antropometría, Atender casos de emergencia, en el área de primeros auxilios, Aplicar técnicas relacionadas a: inyectables, extracción sanguínea, venoclisis, manejo de equipo estéril, entre otros.\nFomentar actitudes positivas en la atención de pacientes.'),
+(4, 'Bachillerato General', 'El Bachillerato General, es el primer acercamiento del estudiante a las diferentes áreas académicas: ciencias sociales, ciencias naturales, informática, matemáticas, etc.');
+
+---------------------------MATERIA-----------------------------------
+INSERT INTO `materias` (`id_materia`, `asignatura_materia`) VALUES ('1', 'Matemática'), ('2', 'Ciencias'), ('3', 'Lenguaje'), ('4', 'Sociales'), ('5', 'Ingles'), ('6', 'Diplomado'), ('7', 'Modulo');
+
+-----------------------------USUARIO-----------------------------------
+INSERT INTO `usuario` (`id_usuario`, `codigo_usuario`, `abreviatura_usuario`, `nombre_usuario`, `apellido_usuario`, `correo_usuario`, `contrasena_usuario`, `permiso_1_usuario`, `permiso_2_usuario`, `permiso_3_usuario`, `permiso_4_usuario`) VALUES ('1', 'UM201481', 'Tec.', 'Jonnathan Alexander', 'Urquilla Munoz', 'Jonnathanweltx@gmail.com', '$2y$10$JN/wWaFWYCqFj48D.vpWj.kRC7Qdwdop9aPNRqGNFACuufYlmFZhe', b'1', b'1', b'1', b'1');
+
+------------------------------AULAS----------------------------------------
+INSERT INTO `aulas` (`id_aula`, `codigo_aula`) VALUES ('1', 'A1'), ('2', 'A2'), ('3', 'B1'), ('4', 'B2'), ('5', 'B3'), ('6', 'B4'), ('7', 'B5'), ('8', 'B6'), ('9', 'D1'), ('10', 'D2'), ('11', 'D3'), ('14', 'D4'), ('15', 'D5'), ('16', 'D6'), ('17', 'E1'), ('18', 'E2'), ('19', 'E3'), ('20', 'E4'), ('21', 'E5'), ('22', 'E6'), ('23', 'F1'), ('24', 'F2'), ('25', 'F3'), ('26', 'F4'), ('27', 'F5'), ('28', 'G1'), ('29', 'G2');
+
+
+

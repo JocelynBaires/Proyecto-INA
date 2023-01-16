@@ -1,0 +1,204 @@
+
+/*TABLA APARTE SIN RELACION CON OTRAS TABLAS*/
+
+/*----- TABLA USUARIO -----*/
+CREATE TABLE USUARIO(
+    id_usuario INT NOT NULL AUTO_INCREMENT,
+    codigo_usuario CHAR(10) NOT NULL,
+    abreviatura_usuario CHAR(6) NOT NULL,
+    nombre_usuario CHAR(70) NOT NULL,
+    apellido_usuario CHAR(70) NOT NULL,
+    correo_usuario CHAR(100) NOT NULL,
+    contrasena_usuario TEXT NOT NULL,
+    permiso_1_usuario BIT NOT NULL,
+    permiso_2_usuario BIT NOT NULL,
+    permiso_3_usuario BIT NOT NULL,
+    permiso_4_usuario BIT NOT NULL,
+PRIMARY KEY (`id_usuario`))ENGINE=InnoDB;
+
+/*A ver maldito block de notas, a ver si ahora me lo guardas maldito .l.*/
+
+
+/*----- TABLA AULAS -----*/
+CREATE TABLE AULAS(
+    id_aula INT NOT NULL AUTO_INCREMENT,
+    codigo_aula CHAR(3) NOT NULL,
+PRIMARY KEY (`id_aula`))ENGINE=InnoDB;
+
+/*----- TABLA DOCENTES -----*/
+CREATE TABLE DOCENTES(
+    id_docente INT NOT NULL AUTO_INCREMENT,
+    abreviatura_docente CHAR(6) NOT NULL,
+    nombre_docente CHAR(70) NOT NULL,
+    apellido_docente CHAR(70) NOT NULL,
+PRIMARY KEY (`id_docente`))ENGINE=InnoDB;
+
+/*----- TABLA EXPECIALIDADES -----*/
+CREATE TABLE EXPECIALIDADES(
+    id_expecialidad INT NOT NULL AUTO_INCREMENT,
+    nombre_expecialidad CHAR(100) NOT NULL,
+    detalles_expecialidad TEXT NOT NULL,
+PRIMARY KEY (`id_expecialidad`))ENGINE=InnoDB;
+
+/*----- TABLA GRUPOS -----*/
+CREATE TABLE GRUPOS(
+    id_grupo CHAR(2) NOT NULL,
+    cod_grupo CHAR(2) NOT NULL,
+PRIMARY KEY (`id_grupo`))ENGINE=InnoDB;
+
+/*----- TABLA SECCIONES -----*/
+CREATE TABLE SECCIONES(
+    id_seccion INT NOT NULL AUTO_INCREMENT,
+    grupo_seccion CHAR(2) NOT NULL,
+    registro_seccion DATE NOT NULL,
+PRIMARY KEY (`id_seccion`))ENGINE=InnoDB;
+
+/*----- TABLA MATERIAS-----*/
+CREATE TABLE MATERIAS(
+    id_materia INT NOT NULL AUTO_INCREMENT,
+    asignatura_materia CHAR(50) NOT NULL,
+PRIMARY KEY (`id_materia`))ENGINE=InnoDB;
+
+/*----- TABLA CLASES -----*/
+CREATE TABLE CLASES(
+    id_clase INT NOT NULL AUTO_INCREMENT,
+    docente_clase INT NOT NULL,
+    hora_clase CHAR(7) NOT NULL,
+    dia_clase CHAR(15) NOT NULL,
+    secciones_clase INT NOT NULL,
+    aula_clase INT NOT NULL,
+    materias_clase INT NOT NULL,
+PRIMARY KEY (`id_clase`))ENGINE=InnoDB;
+
+/*----- TABLA ALUMNOS -----*/
+CREATE TABLE ALUMNOS(
+    id_alumno INT NOT NULL AUTO_INCREMENT,
+    nombre_alumno CHAR(60) NOT NULL,
+    apellido_alumno CHAR(60) NOT NULL,
+    genero_alumno CHAR(1) NOT NULL,
+    activo_alumno BIT NOT NULL,
+    cod_lista_alumno INT NOT NULL,
+    seccion_alumno INT NOT NULL,
+    expecialidad_alumno INT NOT NULL,
+PRIMARY KEY (`id_alumno`))ENGINE=InnoDB;
+
+/*----- TABLA ASISTENCIA MATUTINO-----*/
+CREATE TABLE ASISTENCIAS_MATUTINO(
+    id_asistencia INT NOT NULL AUTO_INCREMENT,
+    fecha_asistencia DATE NOT NULL,
+    mes_asistencia CHAR(15) NOT NULL,
+    estudiante_asistencia INT NOT NULL,
+    dia_01 CHAR(3),
+    dia_02 CHAR(3),
+    dia_03 CHAR(3),
+    dia_04 CHAR(3),
+    dia_05 CHAR(3),
+    dia_06 CHAR(3),
+    dia_07 CHAR(3),
+    dia_08 CHAR(3),
+    dia_09 CHAR(3),
+    dia_10 CHAR(3),
+    dia_11 CHAR(3),
+    dia_12 CHAR(3),
+    dia_13 CHAR(3),
+    dia_14 CHAR(3),
+    dia_15 CHAR(3),
+    dia_16 CHAR(3),
+    dia_17 CHAR(3),
+    dia_18 CHAR(3),
+    dia_19 CHAR(3),
+    dia_20 CHAR(3),
+    dia_21 CHAR(3),
+    dia_22 CHAR(3),
+    dia_23 CHAR(3),
+    dia_24 CHAR(3),
+    dia_25 CHAR(3),
+    dia_26 CHAR(3),
+    dia_27 CHAR(3),
+    dia_28 CHAR(3),
+    dia_29 CHAR(3),
+    dia_30 CHAR(3),
+    dia_31 CHAR(3),
+PRIMARY KEY (`id_asistencia`))ENGINE=InnoDB;
+
+/*----- TABLA ASISTENCIA VERPERTINO-----*/
+CREATE TABLE ASISTENCIAS_VESPERTINO(
+    id_asistencia INT NOT NULL AUTO_INCREMENT,
+    fecha_asistencia DATE NOT NULL,
+    mes_asistencia CHAR(15) NOT NULL,
+    estudiante_asistencia INT NOT NULL,
+    dia_01 CHAR(3),
+    dia_02 CHAR(3),
+    dia_03 CHAR(3),
+    dia_04 CHAR(3),
+    dia_05 CHAR(3),
+    dia_06 CHAR(3),
+    dia_07 CHAR(3),
+    dia_08 CHAR(3),
+    dia_09 CHAR(3),
+    dia_10 CHAR(3),
+    dia_11 CHAR(3),
+    dia_12 CHAR(3),
+    dia_13 CHAR(3),
+    dia_14 CHAR(3),
+    dia_15 CHAR(3),
+    dia_16 CHAR(3),
+    dia_17 CHAR(3),
+    dia_18 CHAR(3),
+    dia_19 CHAR(3),
+    dia_20 CHAR(3),
+    dia_21 CHAR(3),
+    dia_22 CHAR(3),
+    dia_23 CHAR(3),
+    dia_24 CHAR(3),
+    dia_25 CHAR(3),
+    dia_26 CHAR(3),
+    dia_27 CHAR(3),
+    dia_28 CHAR(3),
+    dia_29 CHAR(3),
+    dia_30 CHAR(3),
+    dia_31 CHAR(3),
+PRIMARY KEY (`id_asistencia`))ENGINE=InnoDB;
+
+/*-----Creando llaves externas para tabla secciones-----*/
+ALTER TABLE SECCIONES 
+ADD CONSTRAINT seccion_grupo
+FOREIGN KEY(grupo_seccion)
+REFERENCES GRUPOS(id_grupo);
+
+/*-----Creando llaves externas para tabla clases-----*/
+ALTER TABLE CLASES 
+ADD CONSTRAINT clases_docente
+FOREIGN KEY(docente_clase)
+REFERENCES DOCENTES(id_docente),
+ADD CONSTRAINT clases_secciones
+FOREIGN KEY(secciones_clase)
+REFERENCES SECCIONES(id_seccion),
+ADD CONSTRAINT clases_aulas
+FOREIGN KEY(aula_clase)
+REFERENCES AULAS(id_aula),
+ADD CONSTRAINT clases_materias
+FOREIGN KEY(materia_clase)
+REFERENCES MATERIAS(id_materia);
+
+/*-----Creando llaves externas para tabla alumnos-----*/
+ALTER TABLE ALUMNOS 
+ADD CONSTRAINT alumnos_seccion
+FOREIGN KEY(seccion_alumno)
+REFERENCES SECCIONES(id_seccion),
+ADD CONSTRAINT alumnos_expecialidad
+FOREIGN KEY(expecialidad_alumno)
+REFERENCES EXPECIALIDADES(id_expecialidad);
+
+/*-----Creando llaves externas para tabla asistencias matutino-----*/
+ALTER TABLE ASISTENCIAS_MATUTINO 
+ADD CONSTRAINT asistencias_matutino_alumno
+FOREIGN KEY(estudiante_asistencia)
+REFERENCES ALUMNOS(id_alumno);
+
+/*-----Creando llaves externas para tabla asistencias vespertino-----*/
+ALTER TABLE ASISTENCIAS_VESPERTINO 
+ADD CONSTRAINT asistencias_vespertino_alumno
+FOREIGN KEY(estudiante_asistencia)
+REFERENCES ALUMNOS(id_alumno);
+

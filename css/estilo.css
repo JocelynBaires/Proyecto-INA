@@ -1,0 +1,52 @@
+/* Graficas */
+a {
+    text-decoration: none;
+}
+
+.login-page {
+    width: 100%;
+    height: 100vh;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.form-right i {
+    font-size: 100px;
+}
+
+/* .inadiv {
+    
+}
+
+.inadiv path{
+    fill: red;
+}*/
+
+#edificioA:hover{
+    fill: #D3393D;
+}
+
+#edificioB:hover{
+    fill: #18AC7D;
+}
+
+#edificioD:hover{
+    fill: #CD9A10;
+}
+
+#edificioE:hover{
+    fill: #39ADD3;
+}
+
+#edificioF:hover{
+    fill: #B531B0;
+}
+
+#edificioG:hover{
+    fill: #DC7623;
+}
+
+
+
+/* Menu */
